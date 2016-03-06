@@ -10,8 +10,8 @@
         templateUrl:'app/users/user.list.html',
         controller:'UsersController'
     })
-    .state('users.userprofile', {
-        url: '/:id',
+    .state('userprofile', {
+        url: '/user/:id',
         templateUrl:'app/users/user.profile.html',
         controller:'UserAccountController'
     });
@@ -40,7 +40,7 @@
           }];
           $scope.goto = function(id) {
               //the id here has to be same as the id in state
-              $state.go('users.userprofile', {id:id})
+              $state.go('userprofile', {id:id})
           };
 })
 .controller('UserAccountController', function($scope,$stateParams,Data){

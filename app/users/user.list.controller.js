@@ -3,17 +3,11 @@
     $scope.userdata = Data;
 
     $scope.setPage = function (pageNo) {
-    $scope.currentPage = pageNo;
+        $scope.currentPage = pageNo;
     };
-
-    $scope.pageChanged = function() {
-    $log.log('Page changed to: ' + $scope.currentPage);
-    };
-
-
 
     $scope.goto = function(id) {
-        //the id here has to be same as the "id" in state
+        //the id here has to be same as the "id" delared in state
         $state.go('userprofile', {id:id})
     };
     $scope.delete = function(id) {

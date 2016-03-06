@@ -1,0 +1,28 @@
+﻿<h1>User List</h1>
+
+<!--<a ui-sref="users.userprofile">Go to user profile</a>-->
+
+<table >
+
+</table>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="person in userdata">
+            <td><a ng-click="goto(person.id)">{{person.firstname}}</a></td>
+            <td>{{person.lastname}}</td>
+            <td>{{person.email}}</td>
+        </tr>
+    </tbody>
+  </table>
+
+<!--template loader starts-->
+<div ui-view></div>
+<!--template loader ends-->

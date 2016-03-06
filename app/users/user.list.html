@@ -12,17 +12,25 @@
         <th>Firstname</th>
         <th>Lastname</th>
         <th>Email</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
       </tr>
     </thead>
     <tbody>
         <tr ng-repeat="person in userdata">
-            <td><a ng-click="goto(person.id)">{{person.firstname}}</a></td>
+            <td>{{person.firstname}}</td>
             <td>{{person.lastname}}</td>
             <td>{{person.email}}</td>
+            <td><span class="glyphicon glyphicon-pencil"></span><a ng-click="goto(person.id)">Edit</a></td>
+            <td><span class="glyphicon glyphicon-remove-circle"><a ng-click="delete(person.id)">Remove</a></span></td>
         </tr>
     </tbody>
-  </table>
-
+</table>
+<!--
+<div>
+    <uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize"></uib-pagination>
+</div>
+-->
 <!--template loader starts-->
 <div ui-view></div>
 <!--template loader ends-->

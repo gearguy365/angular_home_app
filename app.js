@@ -1,4 +1,4 @@
-﻿angular.module('app', ['ui.router','ngAnimate', 'ui.bootstrap'])
+﻿angular.module('app', ['ui.router','ngAnimate', 'ui.bootstrap', 'ngResource'])
 .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state('home', {
@@ -14,42 +14,12 @@
         url: '/user/:id',
         templateUrl:'app/users/user.profile.html',
         controller:'UserAccountController'
+    })
+    .state('api',{
+        url:'/APICall',
+        templateUrl:'app/api/api.html',
+        controller:'ApiController'
     });
 
     $urlRouterProvider.otherwise('/home');
-})
-
-.factory('Data', function() {
-    var userdata =
-        [{
-             id:1,
-             firstname:"Scott",
-             lastname:"Jhon",
-             email:"scott@gmail.com"
-          },
-          {
-             id:2,
-             firstname:"Jhon",
-             lastname:"Doe",
-             email:"Jhon@gmail.com"
-          },
-          {
-             id:3,
-             firstname:"greg",
-             lastname:"papa",
-             email:"greg@gmail.com"
-         },
-         {
-              id:4,
-              firstname:"Baggy",
-              lastname:"bag",
-              email:"bag@gmail.com"
-           },
-           {
-                id:5,
-                firstname:"Jhon",
-                lastname:"papa",
-                email:"papa@gmail.com"
-             }];
-          return userdata;
 });

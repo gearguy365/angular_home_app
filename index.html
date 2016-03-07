@@ -7,10 +7,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.3.js"></script>
+    <script src="node_modules/angular-resource/angular-resource.js"></script>
     <script src="app.js"></script>
     <script src="app/home/home.controller.js"></script>
     <script src="app/users/user.list.controller.js"></script>
     <script src="app/users/user.profile.controller.js"></script>
+    <script src="app/api/api.controller.js"></script>
+    <script src="components/utils/static.resource.js"></script>
+    <script src="components/user/api.service.js"></script>
+    <script src="components/user/user.service.js"></script>
+    <script src="components/utils/log.service.js">
+
+    </script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
@@ -23,10 +31,13 @@
             <ul class="nav navbar-nav">
                 <li><a ui-sref="home">Home</a></li>
                 <li><a ui-sref="users">Users</a></li>
+                <li><a ui-sref="api">APICall</a></li>
             </ul>
         </div>
     </nav>
-    <div ui-view></div>
+    <div class="container">
+        <div ui-view></div>
+    </div>
 
 </body>
 </html>

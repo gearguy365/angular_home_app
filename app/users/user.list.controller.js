@@ -1,5 +1,5 @@
 ﻿angular.module('app')
-.controller('UsersController', function($scope,$state,$stateParams,Data){
+.controller('UsersController', function($scope,$state,$stateParams,Data,log){
     $scope.userdata = Data;
 
     $scope.setPage = function (pageNo) {

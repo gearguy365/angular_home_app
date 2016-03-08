@@ -15,5 +15,6 @@ angular.module('app')
         getUserList: function(){
             return userList.query();
         }
+
     };
 });

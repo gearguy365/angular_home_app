@@ -9,20 +9,29 @@
     <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.3.js"></script>
     <script src="node_modules/angular-resource/angular-resource.js"></script>
     <script src="app.js"></script>
+    <!--home module-->
     <script src="app/home/home.controller.js"></script>
+    <script src="app/home/home.routes.js"></script>
+    <!--user module-->
     <script src="app/users/user.list.controller.js"></script>
     <script src="app/users/user.profile.controller.js"></script>
+    <script src="app/users/user.routes.js"></script>
+    <!--api module-->
     <script src="app/api/api.controller.js"></script>
+    <script src="app/api/api.routes.js"></script>
+    <!--common components & services-->
     <script src="components/utils/static.resource.js"></script>
+    <script src="components/utils/log.service.js"></script>
     <script src="components/user/api.service.js"></script>
     <script src="components/user/user.service.js"></script>
-    <script src="components/utils/log.service.js">
+
+
 
     </script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
-<body>
 
+<body>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">

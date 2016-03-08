@@ -5,7 +5,6 @@
     $scope.setPage = function (pageNo) {
         $scope.currentPage = pageNo;
     };
-
     $scope.goto = function(id) {
         //the id here has to be same as the "id" delared in state
         $state.go('userprofile', {id:id})
@@ -14,7 +13,7 @@
         for (var i = 0; i < $scope.userdata.length; i++) {
             if($scope.userdata[i].id == id) {
                 $scope.userdata.splice(i,1);
-                console.log($scope.userdata);
+                log.console($scope.userdata,'error');
             }
         }
     };

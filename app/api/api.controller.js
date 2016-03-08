@@ -2,23 +2,18 @@ angular.module('app')
 .controller('ApiController', function($scope,UserService,log){
     $scope.userPromise = UserService.getUserList();
     $scope.users;
-    $scope.userPromise.$promise.then(function (result) {
-        $scope.users = result;
+    $scope.error = {'status':'no error'};
+    $scope.userPromise.$promise.then(function (success) {
+        $scope.users = success;
+        console.log(success);
+    }, function (error) {
+        $scope.error = error;
+        console.log(error);
+    }).catch(function (exception) {
+     console.log(exception);
     });
 
-    $scope.userPromise.$promise.then(function success(result) {
-        $scope.users = result;
-    },
-    function error(error) {
-        console.log(error);
-        //notificationFactory.error();
-        $scope.users = [{'message':'could not fetch any data'}]
-    });
-    //console.log($scope.users);
-    //$scope.oneUser = UserService.get({user:1});
     $scope.oneUser = [];
-    //console.log($scope.oneUser);
-    //log.console($scope.oneUser,null);
 });
 /*
 { 'get':    {method:'GET'},

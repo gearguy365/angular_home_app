@@ -13,12 +13,16 @@ require.config({
         'userRoutes':'app/users/user.routes',
         'apiRoutes' : 'app/api/api.routes',
         'StaticResource': 'components/utils/static.resource',
-        'logService': 'components/utils/log.service'
+        'logService': 'components/utils/log.service',
+        'progressBar': 'node_modules/angular-loading-bar/src/loading-bar'
 
     },
     shim: {
         'angular': {
             exports: 'angular'
+        },
+        'progressBar': {
+            deps : ['angular']
         },
         'ngResource': {
             deps: ['angular']
@@ -71,7 +75,8 @@ var initiallyLoadedModules = [
     'userRoutes',
     'apiRoutes',
     'StaticResource',
-    'logService'
+    'logService',
+    'progressBar'
 ];
 
 setTimeout(function () {

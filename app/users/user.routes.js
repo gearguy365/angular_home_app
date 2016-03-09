@@ -21,7 +21,7 @@ angular.module('app')
         resolve: {
                    load: function($ocLazyLoad) {
                        return $ocLazyLoad.load ({
-                           files: ['app/users/user.profile.controller.js']
+                           files: ['app/users/user.profile.controller.js','components/user/user.service.js']
                        });
                    }
                }

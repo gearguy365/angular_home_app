@@ -1,6 +1,6 @@
 angular.module('app')
 .factory('UserService', function($resource,StaticResource){
-    var userList = $resource('http://jsonplaceholder.typicode.com/users/:id',{id: "@userId"},{
+    var userList = $resource(StaticResource.BASE_URL+'/:id',{id: "@userId"},{
         query: { method: "GET", isArray: true },
         get: { method:"GET", isArray: false}
     });

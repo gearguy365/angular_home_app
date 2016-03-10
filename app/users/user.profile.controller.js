@@ -24,12 +24,17 @@ angular.module('app')
         resolve: {
           items: function () {
             return $scope.items;
+          },
+          userinput:function() {
+              return $scope.userinput;
           }
+
         }
       });
 
-      modalInstance.result.then(function (selectedItem) {
-        $scope.selected = selectedItem;
+      modalInstance.result.then(function (userinput) {
+        //$scope.selected = selectedItem;
+        $scope.userinputdisplay = userinput;
       }, function () {
         $log.info('Modal dismissed at: ' + new Date());
       });
@@ -39,15 +44,16 @@ angular.module('app')
       $scope.animationsEnabled = !$scope.animationsEnabled;
     };
 })
-.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
+.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items, userinput) {
 
     $scope.items = items;
+    $scope.userinput = userinput;
     $scope.selected = {
         item: $scope.items[0]
     };
 
     $scope.ok = function () {
-        $uibModalInstance.close($scope.selected.item);
+        $uibModalInstance.close($scope.userinput);
     };
 
     $scope.cancel = function () {
